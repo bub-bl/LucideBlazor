@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="LucideBlazor.Generator/LucideBlazor.Generator.csproj" />
+  <Project Path="LucideBlazor/LucideBlazor.csproj" />
+  <Project Path="LucideBlazor.Test/LucideBlazor.Test.csproj" />
+</Solution>

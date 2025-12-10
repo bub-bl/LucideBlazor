@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsTrimmable>true</IsTrimmable>
+        
+        <RootNamespace>LucideBlazor</RootNamespace>
+        
+        <Title>LucideBlazor</Title>
+        
+        <Authors>ChiaraBm</Authors>
+        
+        <Description>Lucide icons blazor components with trimming support</Description>
+        
+        <Copyright>ChiaraBm &amp; Lucide Icons Contributors</Copyright>
+        
+        <PackageProjectUrl>https://github.com/ChiaraBm/LucideBlazor</PackageProjectUrl>
+        
+        <RepositoryUrl>https://github.com/ChiaraBm/LucideBlazor</RepositoryUrl>
+        
+        <RepositoryType>git</RepositoryType>
+        
+        <PackageTags>lucide</PackageTags>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.8"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LucideBlazor.Generator\LucideBlazor.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <AdditionalFiles Include="../lucide/icons/*.svg">
+            <Link>Icons\%(Filename)%(Extension)</Link>
+        </AdditionalFiles>
+    </ItemGroup>
+</Project>
