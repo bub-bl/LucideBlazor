@@ -2,11 +2,11 @@
 
 on:
   workflow_dispatch:
-    push:
-      paths:
-        - "LucideBlazor/**.csproj"
-      branches:
-        - main
+  push:
+    paths:
+      - "LucideBlazor/**.csproj"
+    branches:
+      - main
 
 jobs:
   publish:
