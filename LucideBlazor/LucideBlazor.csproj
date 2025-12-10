@@ -5,24 +5,16 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <IsTrimmable>true</IsTrimmable>
-        
         <RootNamespace>LucideBlazor</RootNamespace>
-        
         <Title>LucideBlazor</Title>
-        
         <Authors>ChiaraBm</Authors>
-        
         <Description>Lucide icons blazor components with trimming support</Description>
-        
         <Copyright>ChiaraBm &amp; Lucide Icons Contributors</Copyright>
-        
         <PackageProjectUrl>https://github.com/ChiaraBm/LucideBlazor</PackageProjectUrl>
-        
         <RepositoryUrl>https://github.com/ChiaraBm/LucideBlazor</RepositoryUrl>
-        
         <RepositoryType>git</RepositoryType>
-        
         <PackageTags>lucide</PackageTags>
+        <Version>1.0.0</Version>
     </PropertyGroup>
 
 
