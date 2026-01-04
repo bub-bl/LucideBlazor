@@ -8,13 +8,13 @@ public abstract class IconBase : IComponent
     [Parameter] public string? ClassName { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object?>? Props { get; set; }
-    
-    private RenderHandle Handle;
+    public Dictionary<string, object>? Props { get; set; }
+
+    private RenderHandle _handle;
 
     public void Attach(RenderHandle renderHandle)
     {
-        Handle = renderHandle;
+        _handle = renderHandle;
     }
 
     protected void RenderIcon(RenderTreeBuilder builder, string svgContent)
@@ -22,10 +22,9 @@ public abstract class IconBase : IComponent
         var counter = 0;
 
         builder.OpenElement(0, "svg");
-
         builder.AddAttribute(counter++, "class", ClassName);
 
-        if (Props != null)
+        if (Props is not null)
         {
             foreach (var attribute in Defaults.DefaultAttributes)
             {
@@ -38,8 +37,7 @@ public abstract class IconBase : IComponent
         else
             builder.AddMultipleAttributes(counter++, Defaults.DefaultAttributes);
 
-        builder.AddMarkupContent(counter++, svgContent);
-
+        builder.AddMarkupContent(counter, svgContent);
         builder.CloseElement();
     }
 
@@ -54,17 +52,16 @@ public abstract class IconBase : IComponent
                 case nameof(ClassName):
                     ClassName = (string)parameter.Value;
                     break;
-                
+
                 default:
-                    Props ??= new Dictionary<string, object?>();
+                    Props ??= new Dictionary<string, object>();
                     Props[parameter.Name] = parameter.Value;
-                    
+
                     break;
             }
         }
-        
-        Handle.Render(HandleRender);
 
+        _handle.Render(HandleRender);
         return Task.CompletedTask;
     }
 }
